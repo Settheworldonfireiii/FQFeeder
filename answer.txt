@@ -1,0 +1,3 @@
+However, if for some reason you do extra explicit synchronization between the two producer threads yourself, thus defining a total order between enqueue operations, you might expect that the elements would come out in the same total order, which is a guarantee my queue does not offer. At that point, though, there semantically aren't really two separate producers, but rather one that happens to be spread across multiple threads. In this case, you can still establish a total ordering with my queue by creating a single producer token, and using that from both threads to enqueue (taking care to synchronize access to the token, of course, but there was already extra synchronization involved anyway).
+
+SO WE NEED IT CUZ WE NEED IT ORDERED.
